@@ -23,6 +23,7 @@ class Post(models.Model):
     text = models.TextField(verbose_name='Текст поста')
     pub_date = models.DateTimeField(verbose_name="Дата публикации", 
                                     auto_now_add=True)                         
-    author = models.ForeignKey(User, on_delete=models.CASCADE, 
+    author = models.ForeignKey(User, verbose_name='Автор', 
+                               on_delete=models.CASCADE, 
                                related_name="posts")
     
