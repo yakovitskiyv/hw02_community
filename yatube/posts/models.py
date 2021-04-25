@@ -8,7 +8,7 @@ User = get_user_model()
 
 class Group(models.Model):
     title = models.CharField(max_length=200,verbose_name = 'Название сообщества')
-    slig = models.SlugField(max_length=200,unique=True, verbose_name='Адрес')
+    slug = models.SlugField(max_length=200,unique=True, verbose_name='Адрес')
     description = models.TextField(null=True, blank=True, verbose_name='Описание')
     
     def __str__(self):
