@@ -24,7 +24,7 @@ class Group(models.Model):
 class Post(models.Model):
     group = models.ForeignKey(Group, null=True, blank=True,
                               verbose_name='Сообщество',
-                              related_name="posts",
+                              related_name="group_posts",
                               on_delete=models.SET_NULL)
 
     text = models.TextField(verbose_name='Текст поста')
