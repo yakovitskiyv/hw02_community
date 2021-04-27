@@ -14,6 +14,9 @@ class Group(models.Model):
                                    blank=True,
                                    verbose_name='Описание')
 
+    class Meta:
+        verbose_name_plural = "Сообщества"
+
     def __str__(self):
         return self.title
 
@@ -21,8 +24,8 @@ class Group(models.Model):
 class Post(models.Model):
     group = models.ForeignKey(Group, null=True, blank=True,
                               verbose_name='Сообщество',
-                              related_name="posts_group",
-                              on_delete=models.CASCADE)
+                              related_name="posts",
+                              on_delete=models.SET_NULL)
 
     text = models.TextField(verbose_name='Текст поста')
 
@@ -31,3 +34,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, verbose_name='Автор',
                                on_delete=models.CASCADE,
                                related_name="posts")
+
+    class Meta:
+        ordering = ["-pub_date"]
+        verbose_name_plural = "Публикации"
