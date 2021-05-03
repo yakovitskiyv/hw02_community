@@ -1,18 +1,15 @@
-{% extends 'base.html' %}
-
-{% block title %}Записи сообщества {{ group.title }}{% endblock %}
-{% block header %}{{ group.title }}{% endblock %}
+{% extends "base.html" %}
+{%block title%} Записи сообщества {{group.title}} {% endblock %}
+{% block header0 %}  {{group.title|linebreaksbr}}   {% endblock %}
+{% block header %} {{group.description}} {% endblock %}
 {% block content %}
-<p>
-  {{ group.description }}
-</p>
 
-{% for post in posts %}
-     <h3>
-     Автор: {{ post.author.get_full_name }}, дата публикации:
-     {{ post.pub_date|date:"d M Y" }}
-     </h3>
-     <p> {{ post.text }} </p>
-<hr>
-{% endfor %}
-{% endblock %}
+    {% for post in posts %}
+    <h3>
+        Автор: {{post.author.get_full_name}}, Дата публикации: {{ post.pub_date|date:"d M Y" }}
+    </h3>
+    <p>{{ post.text|linebreaksbr }}</p>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+
+{% endblock %} 
