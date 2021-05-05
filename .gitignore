@@ -147,4 +147,4 @@ dmypy.json
 
 static/
 requirements_.txt
-header.html
+sent_emails/
