@@ -16,9 +16,9 @@ class Group(models.Model):
         verbose_name='Адрес'
     )
     description = models.TextField(
-         null=True,
-         blank=True,
-         verbose_name='Описание сообщества'
+        null=True,
+        blank=True,
+        verbose_name='Описание сообщества'
     )
 
     class Meta:
@@ -53,6 +53,9 @@ class Post(models.Model):
         on_delete=models.SET_NULL,
         verbose_name='Сообщество'
     )
+
+    def __str__(self):
+        return self.text
 
     class Meta:
         verbose_name = 'Публикация'
