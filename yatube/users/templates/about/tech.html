@@ -1,0 +1,54 @@
+<!-- templates/about/author.html -->
+{% extends "base.html" %}
+{% block title %}Об авторе проекта{% endblock %}
+{% block content %}
+{% load user_filters %}
+  <main role="main" class="container">
+    <div class="row">
+      <!-- Левый вспомогательный блок -->
+      <div class="col-md-3 mb-3 mt-1">
+        <div class="card">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="h3">
+                  О технологиях
+                </div> 
+              </li>
+              <li class="list-group-item">
+                <div class="h6 text-muted">
+                  лучше использовать хорошие технологии, чем плохие, и лучше хоть какие-то, чем никаких.
+                </div>
+              </li>
+            </ul>                                               
+          </div>                    
+        </div>                
+      </div>
+      <!-- Тело страницы -->
+      <div class="col-md-9">
+        <div class="card-body">                    
+          <div class="card-text">
+            <p>Название проекта: yatube_project<p>
+<p>Социальная сеть сотрудников компании<p>
+<p>Благодаря этому проекту сотрудникам компании можно будет обсуждать
+производственные вопросы и делать предложения по улучшению производства.<p>
+<p>Technology:<p>
+<p>Python 3.7 Django 2.2.19<p>
+
+<p>Lanch project in dev-mode:<p>
+<p>Install and activate virtual enviroment<p>
+<p>Install dependieses from file requirements.txt<p>
+<p>pip install -r requirements.txt<p>
+<p>In folder with file manage.py execute command:<p>
+<p>python3 manage.py runserver<p>
+
+<p>Author<p>
+<p>Vladislav Yakovitski<p>
+            
+           
+          </div>                    
+        </div>                
+      </div>            
+    </div>        
+  </main>
+{% endblock %} 
